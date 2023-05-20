@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/gif.js/dist/gif.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.2.0/gif.js" integrity="sha512-nNOFtIS+H0lwgdUDaPn/g1ssw3uN9AkEM7zy2wLaTQeLQNeNiitUcLpEpDIh3Z4T22MdeTNru/SQbNM4ig2rng==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.1.6/gif.worker.js"></script>
+</head>
+
+<body>
+  
+<button onclick="convertToHebrew()">Convert to Hebrew</button>
+
+    <div class="container">
+        <div id="output"></div>
+        <div class="mb-3">
+            <label for="textInput" class="form-label">Enter text</label>
+            <input type="text" class="form-control" id="textInput" placeholder="Type something...">
+        </div>
+        <div class="mb-3">
+            <label for="fontSelect" class="form-label">Select font family</label>
+            <select class="form-select" id="fontSelect">
+                <option value="Arial">Arial</option>
+                <option value="Helvetica">Helvetica</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Tahoma">Tahoma</option>
+                <option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
+                <option value="Palatino Linotype">Palatino Linotype</option>
+                <option value="Garamond">Garamond</option>
+                <option value="Bookman">Bookman</option>
+                <option value="Trebuchet MS">Trebuchet MS</option>
+                <option value="Impact">Impact</option>
+                <option value="Comic Sans MS">Comic Sans MS</option>
+                <option value="Copperplate">Copperplate</option>
+                <option value="Brush Script MT">Brush Script MT</option>
+                <option value="Monaco">Monaco</option>
+                <option value="Consolas">Consolas</option>
+
+
+                <option value="Consolas">Consolas</option>
+                <option value="Consolas">Consolas</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="rangeInput" class="form-label">Adjust font size</label>
+            <div class="input-group">
+                <input type="range" class="form-range" id="rangeInput" min="10" max="100" value="30" step="1">
+                <span class="input-group-text" id="rangeValue"></span>
+                <span class="input-group-text">Font Size</span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="glitterSelect" class="form-label">Select glitter effect</label>
+            <div class="glitter-images">
+                <img src="https://i.picasion.com/images/glitters/gl/DCglit1.gif" alt="Glitter 1"
+                    onclick="selectGlitter(1)">
+                <img src="https://i.picasion.com/images/glitters/gl/DCglit2.gif" alt="Glitter 2"
+                    onclick="selectGlitter(2)">
+                <img src="https://i.picasion.com/images/glitters/gl/DCglit3.gif" alt="Glitter 3"
+                    onclick="selectGlitter(3)">
+                <img src="https://i.picasion.com/images/glitters/gl/DCglit4.gif" alt="Glitter 4"
+                    onclick="selectGlitter(4)">
+                <img src="https://i.picasion.com/images/glitters/gl/DCglit5.gif" alt="Glitter 5"
+                    onclick="selectGlitter(5)">
+                <img src="https://i.picasion.com/images/glitters/gl/DCglit6.gif" alt="Glitter 6"
+                    onclick="selectGlitter(6)">
+                <img src="https://i.picasion.com/images/glitters/gl/DCglit7.gif" alt="Glitter 7"
+                    onclick="selectGlitter(7)">
+                <img src="https://i.picasion.com/images/glitters/gl/DCglit8.gif" alt="Glitter 8"
+                    onclick="selectGlitter(8)">
+            </div>
+        </div>
+
+        <div class="d-grid">
+            <button id="downloadBtn" class="btn btn-primary" onclick="downloadGif()">Download GIF</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/html2canvas.min.js"></script>
+    <!-- <script src="gif.worker.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+@import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
+
+@import url(http://fonts.googleapis.com/earlyaccess/notosanshebrew.css);
+
+@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
+
+@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrewcondensed.css);
+img {
+    -webkit-user-drag: none;
+}
+
+::selection {
+    background-color: #212121;
+    color: white;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#output {
+    margin-bottom: 20px;
+    height: 200px;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    padding: 10px;
+    align-items: center;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-select {
+    width: 100%;
+}
+
+#rangeValue {
+    margin-left: auto;
+}
+
+#glitterSelect {
+    display: none;
+}
+
+.form-range {
+    width: 100%;
+}
+
+.input-group-text {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.glitter {
+    position: relative;
+    display: inline-block;
+}
+
+.glitter:hover::after {
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    right: -10%;
+    bottom: -10%;
+    background: url("sparkles.gif") repeat;
+    z-index: 1;
+    pointer-events: none;
+    animation: sparkle 1s linear infinite;
+}
+
+@keyframes sparkle {
+    0% {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1.5);
+        opacity: 0;
+    }
+}
+
+.glitter-images {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 14px;
+}
+
+.glitter-images img {
+    opacity: 0.3;
+    width: 100%;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.glitter-images img.selected {
+    opacity: 1;
+}
+.test{
+
+    -webkit-background-clip: text;
+}
